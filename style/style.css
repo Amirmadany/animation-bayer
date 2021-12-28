@@ -1,0 +1,486 @@
+*{
+    font-family: 'vazir';
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.image{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 37.5rem;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.image-1{
+    clip-path: polygon(0 5%, 56% 2%, 100% 0, 100% 70%, 100% 98%, 0 100%, 0% 70%, 0% 30%); 
+}
+
+.image-main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../assets/images/image-1.jpg') center no-repeat;
+    background-size: 100% 100%;
+    transition: all 0.7s;
+    z-index: 0;
+}
+
+.image:hover .image-main{
+    background-size: 107% 107%;
+}
+
+.image-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: #10384fe3;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 8rem;
+    clip-path: polygon(0 0, 100% 0%, 81% 100%, 0% 100%);
+}
+
+.image-content-text{
+    margin: 0.5rem 0;
+    color: #00bcff;
+}
+
+.image-content-title{
+    margin: 0.5rem 0 1rem 0;
+    color: #ff3162;
+}
+
+.button-1{
+    position: relative;
+    border: none;
+    background: none;
+    outline: none !important;
+    color: white;
+    font-style: italic;
+}
+
+.button-1-text{
+    transition: all 0.3s;
+}
+
+.image:hover .button-1-text{
+    margin-left: 0.79rem;
+}
+
+.button-1::before{
+    content: ' ';
+    position: absolute;
+    width: 1px;
+    height: 1.3rem;
+    background: white;
+    top: 50%;
+    left: -0.15rem;
+    transform: translateY(-65%) rotate(14deg);
+}
+
+.button-1.text-danger::before{
+    background: #dc3545;
+}
+
+.button-1.text-primary::before{
+    background: #0d6efd;
+}
+
+.button-1.text-success::before{
+    background: #198754;
+}
+
+.button-1.text-black::before{
+    background: black;
+}
+
+.image-1-out-content{
+    background: none;
+    border-right: 3px solid #00bcff;
+    position: absolute;
+    width: 50%;
+    height: 150%;
+    top: 0;
+    left: 0;
+    transform: translate(-5rem, -5.5rem) rotate(17deg);
+    transition: all 0.7s;
+}
+
+.image:hover .image-1-out-content{
+    transform: translate(-5rem, -9rem) rotate(23deg);
+}
+
+.image-1-triangle{
+    width: 19rem;
+    height: 60%;
+    border: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #ff316185;
+    clip-path: polygon(100% 0, 44% 100%, 100% 100%);
+    transition: all 0.7s;
+}
+
+.image:hover .image-1-triangle{
+    transform: scale(1.5);
+} 
+
+
+.image-2{
+    height: 18.75rem !important;
+}
+
+.image-2 .image-main{
+    background: url('../assets/images/image-2.jpg') center no-repeat;
+    background-size: 100% 100%;
+}
+
+.image-2 .image-content{
+    padding: 0 1.5rem;
+    background: #535c78c4;
+    z-index: 1;
+    transition: all 0.7s;
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 76% 100%, 0% 100%);
+    width: 54%;
+}
+
+.image-2.image-simple.green .image-content{
+    background: #66b512bd;
+}
+
+.image-2 .image-content-text{
+    font-size: 0.9rem;
+    color: white;
+}   
+
+.image-2 .image-content-title{
+    font-size: 0.9rem;
+    color: white;
+}   
+
+.image-2:hover .image-content{
+    width: 55.5%;
+}
+
+.image-2-out-content{
+    background: #2f82a6;
+    z-index: 0;
+    position: absolute;
+    width: 50%;
+    height: 150%;
+    top: 0;
+    left: 0;
+    transition: all 0.7s;
+    clip-path: polygon(0 0, 100% 0%, 81% 100%, 0% 100%);
+
+}
+
+.image-3{
+    background: url('../assets/images/image-55.jpg') center/cover no-repeat;
+    padding: 10rem 0;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-3-content{
+    width: fit-content;
+    margin: auto;
+    line-height: 2.5rem;
+    text-shadow: 1px 3px 4px rgba(0, 0, 0, 0.219);
+}
+
+.image-3-title{
+    font-size: 2.5rem;
+}
+
+.image-3:hover{
+    color: white;
+}
+
+.image-3 .image-box{
+    position: absolute;
+    width: 70%;
+    opacity: .4;
+    transform: skewX(-12deg) translateX(-50%);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: #10384f;
+    overflow: hidden;
+    left: 6%;
+    transition: all .6s ease-in-out;
+}
+
+.image-3:hover .image-box{
+    width: 100%;
+    transform: skewX(-12deg) translateX(88%);
+}
+
+.image-3 .image-middle-line{
+    width: 0%;
+    height: 300%;
+    position: absolute;
+    border-right: 1px solid #ff3162;
+    transform: translateY(-50%) rotate(40deg);
+    transition: all 0.6s;
+}
+
+.image-3:hover .image-middle-line{
+    width: 100%;
+    height: 300%;
+    transform: translateX(100%) rotate(40deg);
+}
+
+.image-4-article{
+    width: 100%;
+    height: 13.37rem;
+    overflow: hidden;
+}
+
+.image-4-article img{
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s;
+}
+
+.image-4-tag{
+    padding:  0.4rem 1.5rem 0.4rem 1rem;
+    display: inline-block;
+    clip-path: polygon(0 0, 100% 0, 84% 100%, 0% 100%);
+    color: white;
+    margin-bottom: 1rem;
+    transition: all 0.4s;
+}
+
+.image-link{
+    color: #0d3851;
+    text-decoration: none;
+}
+
+.image-link:hover{
+    color: #0d3851;
+}
+
+.image-link:hover .image-4-article img{
+    transform: scale(1.07);
+}
+
+.image-link:hover .image-4-tag{
+    padding-right: 2.4rem;
+}
+
+.image-link:hover .button-1-text{
+    margin-left: 0.79rem;
+}
+
+.image-5-image{
+    width: 100%;
+    height: 15.5rem;
+    max-width: 25rem;
+    transform: skew(-11deg);
+    background: url('../assets/images/mom.webp') center no-repeat;
+    background-size: 100% 100%;
+    transition: all 0.4s;
+}
+
+.image-5-title{
+    color: #00617f;
+}
+
+.image-5:hover .image-5-image{
+    background-size: 120% 120%;
+}
+
+.image-5:hover .button-1-text{
+    margin-left: 0.79rem;
+}
+
+.image-6{
+    width: 100%;
+    text-decoration: none;
+    color: #222;
+    width: 26.5rem;
+    height: 15.87rem;
+    margin: auto;
+    overflow: hidden;
+}
+
+.image-6:hover{
+    color: #222;
+}
+
+.image-6-image{
+    max-width: 26.5rem;
+    max-height: 15.87rem;
+    width: 26.5rem;
+    height: 15.87rem;
+    position: relative;
+    overflow: hidden;
+    background: url('../assets/images/EB-EXT_front-right.webp') center no-repeat;
+    background-size: 100% 100%;
+    transition: all 0.3s;
+}
+
+.image-6-image img{
+    width: 100%;
+    height: 100%;
+    transition: all 0.6s;
+    overflow: hidden;
+}
+
+.image-6-inner-content{
+    background: rgba(255, 255, 255, 0.726);
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    padding-left: 3rem;
+    padding-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.6s;
+}
+
+.image-6-inner-content.right{
+    right: 0;
+    clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.image-6-inner-content.left{
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
+}
+
+.image-6-out-line{
+    clip-path: polygon(36% 0, 100% 0, 100% 100%, 0% 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #de0043;
+    width: 0.1rem;
+    height: 300%;
+    transform: rotate(16deg) translate(-3rem, -10%);
+    transition: all 0.6s;
+}
+
+.image-6-out-line.left{
+    transform: rotate(15deg) translate(-5.5rem, -10%);
+}
+
+.image-6-image:hover .button-1-text{
+    margin-left: 0.79rem;
+}
+
+.image-6-image:hover{
+    background-size: 110% 110%;
+}
+
+.image-6-image:hover .image-6-content .button-1-text{
+    margin-left: 0.79rem;
+}
+
+.image-6-image:hover .image-6-inner-content{
+    width: 52%;
+}
+
+.image-6-image:hover .image-6-inner-content.right{
+    padding-left: 3.5rem;
+}
+
+.image-6-image:hover .image-6-out-line{
+    transform: rotate(18deg) translate(-4rem, -15%);
+}
+
+.image-6-image:hover .image-6-out-line.left{
+    transform: rotate(18deg) translate(-5.5rem, -10%);
+}
+
+/* start buttons code */
+.button-2{
+    background: #ff3162;
+    color: white;
+    border: none;
+    outline: none !important;
+    padding: 0.65rem 1rem 0.65rem 2rem;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+    transition: all 0.4s;
+}
+
+.button-2:hover{
+    padding-left: 3rem;
+}
+
+.dir-rtl{
+    direction: rtl;
+}
+
+.button-3{
+    color: white;
+    outline: none !important;
+    border: none;
+    padding: 0 !important;
+    background: #ff004c;
+    transition: all 0.4s;
+    position: relative;
+    width: 12rem;
+    height: 3rem;
+}
+
+.button-3-text{
+    clip-path: polygon(0 0, 100% 0%, 83% 100%, 0% 100%);
+    background: #de0043;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0.75rem;
+    padding-right: 1rem;
+    transition: all 0.4s;
+}
+
+.button-3-icon{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 1rem;
+    z-index: 1;
+}   
+
+.button-3:hover{
+    width: 11rem;
+}
+
+.button-3:hover .button-3-text{
+    width: 100%;
+    padding-left: 0;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* end buttons code */
