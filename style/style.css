@@ -316,7 +316,6 @@
     color: #222;
     width: 26.5rem;
     height: 15.87rem;
-    margin: auto;
     overflow: hidden;
 }
 
@@ -411,7 +410,7 @@
 }
 
 .image-6-image:hover .image-6-out-line.left{
-    transform: rotate(18deg) translate(-5.5rem, -10%);
+    transform: rotate(17deg) translate(-5.5rem, -10%);
 }
 
 /* start buttons code */

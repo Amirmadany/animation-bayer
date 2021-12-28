@@ -124,18 +124,6 @@
         padding: 2rem;
     }
 
-    .image-6-image{
-        clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
-    }
-
-    .image-6-image .image-6-out-line{   
-        display: none;
-    }
-
-    .image-6-image:hover .image-6-out-line{
-        
-    }
-
 }
 
 @media (max-width: 50rem){
@@ -162,6 +150,52 @@
 
     .image-2 .image-main{
         height: 12rem;
+    }
+
+}
+
+@media (max-width: 47.95rem){
+
+    .image-6{
+        overflow: hidden;
+        max-width: 26.5rem;
+        height: auto;
+    }
+
+    .image-6-image{
+        clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+        max-width: 26.5rem;
+        max-height: 15.87rem;
+    }
+
+    
+    .image-6:hover .image-6-image{
+        background-size: 110% 110%;
+    }
+
+    .image-6:hover .button-1-text{
+        margin-left: 0.78rem;
+    }
+
+    .image-6-image .image-6-out-line{   
+        display: none;
+    }
+
+    .image-6-out-line-mobile{
+        display: block;
+        width: 100%;
+        max-width: 26.5rem;
+        margin: auto;
+        height: 0.11rem;
+        background: #ff3162;
+        position: absolute;
+        transform: rotate(0.05deg) translate(0%, -9rem);
+        left: 0;
+        right: 0;
+    }
+
+    .image-6 .image-6-content{
+        max-width: 26.5rem;
     }
 
 }
