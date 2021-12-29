@@ -329,6 +329,20 @@
         margin: auto;
     }
 
+    .image-6-out-line-mobile{
+        display: block;
+        width: 90%;
+        max-width: 26.5rem;
+        margin: auto;
+        height: 0.11rem;
+        background: #ff3162;
+        position: absolute;
+        transform: rotate(0.05deg) translate(0%, -9rem);
+        left: 0;
+        right: 0;
+    }
+
+
 }
 
 @media (max-width: 21.875rem){
