@@ -311,7 +311,7 @@
 @media (max-width: 28.125rem){
 
     body{
-        overflow: hidden;
+        overflow-x: hidden;
     }
 
     .image-5-image{
