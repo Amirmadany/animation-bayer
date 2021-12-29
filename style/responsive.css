@@ -308,6 +308,29 @@
 
 }
 
+@media (max-width: 28.125rem){
+
+    body{
+        overflow: hidden;
+    }
+
+    .image-5-image{
+        width: 100%;
+        height: 12rem;
+    }
+
+    .image-5{
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .image-6-image{
+        width: 90%;
+        margin: auto;
+    }
+
+}
+
 @media (max-width: 21.875rem){
 
     .image{
