@@ -440,7 +440,7 @@
     background: #ff004c;
     transition: all 0.4s;
     position: relative;
-    width: 12rem;
+    min-width: 12rem;
     height: 3rem;
 }
 
@@ -483,3 +483,110 @@
 }
 
 /* end buttons code */
+
+/* start foooter */
+.footer{
+    color: rgba(255, 255, 255, 0.829);
+    background: #624963;
+}
+
+.footer ul{
+    list-style: none;
+    padding: 0;
+}
+
+.footer a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.829) !important; 
+}
+
+.footer-content{
+    background-color: #624963;
+}
+
+.footer-content-item{
+    margin-top: 0.75rem;
+}
+
+.footer-follow-us{
+    background-color: #51455f;
+    clip-path: polygon(0 31%, 100% 0%, 100% 100%, 0% 100%);
+    padding: 8rem 0 0rem 0;
+}
+
+.footer-follow-us-link a{
+    margin: 0.5rem 0.75rem;
+    font-size: 1.6rem;
+    background: #de0043;
+    width: 2.75rem;
+    height: 2.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    transition: all 0.2s;
+}
+
+.footer-follow-us-link:nth-child(1) a:hover{
+    background: orange;
+}
+
+.footer-follow-us-link:nth-child(2) a:hover{
+    background: linear-gradient(to right bottom, #6f42c1, #e83e8c,  #ffc107);
+}
+
+.footer-follow-us-link:nth-child(3) a:hover{
+    background: #0073b0;
+}
+
+.footer-follow-us-link:nth-child(4) a:hover{
+    background: #e52c26;
+}
+
+.footer-follow-us-link:nth-child(5) a:hover{
+    background: #2caae0;
+}
+
+.footer-follow-us-link:nth-child(6) a:hover{
+    background: #3b5b9b;
+}
+
+.footer-follow-us-outro{
+    max-width: 75rem;
+    width: 90%;
+    margin: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.829);
+}
+
+.footer-follow-us-outro-link a{
+    display: block;
+    margin: 0 0.75rem; 
+    margin-top: 1rem;
+    position: relative;
+}
+
+.footer-follow-us-outro-link a::before{
+    position: absolute;
+    content: "|";
+    left: 100%;
+    top: 0;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    transform: rotate(15deg);
+    color: #fff;
+    margin-left: 0.75rem;
+    opacity: 0.7;
+}
+
+.footer-follow-us-outro-link:last-child a::before{
+    display: none;
+}
+
+.footer-white-box{
+    width: 100%;
+    background: white;
+    height: 1.5rem;
+}
+
+/* end footer */
