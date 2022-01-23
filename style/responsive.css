@@ -124,6 +124,43 @@
         padding: 2rem;
     }
 
+    .footer-follow-us{
+        clip-path: polygon(0 11%, 100% 0, 100% 100%, 0% 100%);
+        padding-top: 4rem;
+    }
+
+    .footer-follow-us-outro-list{
+        width: 100%;
+    }
+
+    .footer-follow-us-outro-link{
+        width: fit-content;
+        margin: 0.5rem 0;
+    }
+
+    .footer-follow-us-outro-link a::before{
+        display: none;
+    }
+
+    .footer-follow-us-outro-link a{
+        display: block;
+        margin: 0 0.75rem; 
+        position: relative;
+    }
+
+    .footer-follow-us-outro-link-icon{
+        display: block;
+        font-size: 0.75rem;
+    }
+    
+    .footer-follow-us-outro-text{
+        display: block;
+        width: 100%;
+        border-top: 1px solid white;
+        text-align: center;
+        padding-top: 0.75rem;
+    }
+    
 }
 
 @media (max-width: 50rem){

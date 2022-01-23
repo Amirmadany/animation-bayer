@@ -556,6 +556,7 @@
     width: 90%;
     margin: auto;
     border-top: 1px solid rgba(255, 255, 255, 0.829);
+    font-size: 0.85rem;
 }
 
 .footer-follow-us-outro-link a{
@@ -580,6 +581,10 @@
 }
 
 .footer-follow-us-outro-link:last-child a::before{
+    display: none;
+}
+
+.footer-follow-us-outro-link-icon{
     display: none;
 }
 
