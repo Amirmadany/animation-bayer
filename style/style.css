@@ -612,6 +612,8 @@ main{
     list-style: none;
     padding: 0.5rem 0;
     margin-bottom: 0;
+    z-index: 50;
+    position: relative;
 }
 
 .header-top-item .header-top-item-link{
@@ -671,6 +673,88 @@ main{
     border-left: 16.66px solid transparent;
     border-right: 16.66px solid transparent;
     border-top: 40px solid white;
+}
+
+.header-top-sub-menu{
+    background: #443247;
+    width: 100vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* min-height: 25rem; */
+    height: 0;
+    display: none;
+    z-index: 1;
+    transition: height 0.4s;
+}
+
+.header-top-sub-menu .content{
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+.header-top-sub-menu.show{
+    display: block;
+}
+
+.header-top-sub-menu.show .content{
+}
+
+
+.header-top-sub-menu-close-btn{
+    border: none;
+    outline: none !important;
+    background: #ff3162;
+    color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    position: absolute;
+    right: 0.1rem;
+    cursor: pointer;
+    top: 2rem;
+}
+
+.button-5{
+    background: none;
+    border: none;
+    outline: none !important;
+    color: #66b512;
+    position: relative;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.button-5 span{
+    margin-left: 0.5rem;
+    transition: all 0.3s;
+}
+
+.button-5:hover span{
+    margin-left: 1.5rem;
+}
+
+.button-5::before{
+    content: ' ||| ';
+    position: absolute;
+    right: 100%;
+    transform: skew(-11deg);
+}
+
+.header-top-sub-menu-item a{
+    display: block;
+    margin: 1rem 0;
+}
+
+.header-top-sub-menu-item-icon{
+    color: #ff3162;
+}
+
+.header-content{
+    z-index: 40;
 }
 
 .header-content-brand{
@@ -750,6 +834,7 @@ main{
     outline: none !important;
     border: 1px solid #10384f;
     color: #10384f;
+    font: inherit;
 }
 
 .header-content-inner-list-item-search button{
@@ -757,6 +842,10 @@ main{
     height: 3.6rem;
     position: absolute;
     right: 10%;
+}
+
+.header-content-inner-list-item-link.search-btn{
+    font-size: 1.3rem;
 }
 
 /* end header */

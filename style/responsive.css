@@ -184,6 +184,10 @@
         height: 0.05rem;
         background: white;
     }
+
+    .header-top-sub-menu-item{
+        border-top: 1px solid rgba(255, 255, 255, 0.637);
+    }
     
 }
 
