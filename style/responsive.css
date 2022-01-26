@@ -36,6 +36,7 @@
         height: 14rem !important;
     }
 
+    
 }
 
 @media (max-width: 61.93rem){
@@ -187,6 +188,19 @@
 
     .header-top-sub-menu-item{
         border-top: 1px solid rgba(255, 255, 255, 0.637);
+    }
+
+    .header-top-right{
+        display: none;
+    }
+
+    .header-content-inner-list{
+        display: none;
+    }
+
+    .header-content-brand{
+        width: 3.15rem;
+        height: 3.15rem;
     }
     
 }

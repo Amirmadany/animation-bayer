@@ -614,6 +614,7 @@ main{
     margin-bottom: 0;
     z-index: 50;
     position: relative;
+    flex-wrap: wrap;
 }
 
 .header-top-item .header-top-item-link{
@@ -621,7 +622,7 @@ main{
     padding-bottom: 0 !important;
     margin: 0 0.85rem;
     color: rgba(255, 255, 255, 0.918);
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     transition: all 0.3s;
     background: none;
     border: none;
@@ -640,7 +641,7 @@ main{
 
 .header-top-item-icon{
     color: rgba(255, 255, 255, 0.918) !important;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 
 .header-top-item-link::after{
@@ -857,5 +858,15 @@ main{
 .header-top-item.has-sub.active a{
     color: #00bcff !important;
 }
+
+.header-top-location-info a{
+    color: #89d329 !important;
+    font-size: 0.9rem;
+}
+
+.header-top-location-info p{
+    font-size: 0.85rem;
+}
+
 
 /* end header */
