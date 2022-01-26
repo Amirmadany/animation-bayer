@@ -19,14 +19,28 @@ searchBtn.addEventListener('click', (event) => {
 // header-top-items
 const headerTopItem = document.querySelectorAll('.header-top-item.has-sub') 
 const headerTopSubMenu = document.querySelector('.header-top-sub-menu')
+const closeHeaderTopMenuBtn = document.querySelector('.header-top-sub-menu-close-btn')
+const headerTopMenuItems = document.querySelectorAll('.header-top-item-sub')
 
-headerTopItem.forEach(item => {
+headerTopItem.forEach((item, index) => {
     item.addEventListener('click', (event) => {
         event.preventDefault()
 
         headerTopSubMenu.classList.toggle('show')
 
+        if(document.querySelector('.header-top-item.has-sub.active') && document.querySelector('.header-top-item.has-sub.active').innerHTML != item.innerHTML){
+            document.querySelector('.header-top-item.has-sub.active').classList.remove('active')
+        }
+        
+        if(headerTopSubMenu.classList.contains('show'))
+            item.classList.add('active')
+        else
+            item.classList.remove('active')
+
         if(headerTopSubMenu.classList.contains('show')){
+
+            headerTopSubMenu.querySelector('.content .container').innerHTML = headerTopMenuItems[index].innerHTML
+
             headerTopSubMenu.querySelector('.content').style.opacity = '0'
 
             headerTopSubMenu.style.height = 'auto'
@@ -57,26 +71,39 @@ headerTopItem.forEach(item => {
         }
 
         else {
-            let height = headerTopSubMenu.style.height.slice(0, headerTopSubMenu.style.height.length - 2);
-            headerTopSubMenu.querySelector('.content').style.opacity = '0'
-
-            headerTopSubMenu.classList = 'header-top-sub-menu ps-5 d-block'
-
-            let time = setInterval(subtractHeigth, 1)
-
-            function subtractHeigth(){
-                height -= 10;
-                headerTopSubMenu.style.height = `${height}px`
-                
-                if(height <= -850){
-                    clearInterval(time)
-                    time = null
-                    headerTopSubMenu.classList = 'header-top-sub-menu ps-5'
-                }
-
-            }
-        
+            closeHeaderTopMenu()
         }
 
     })
 })
+
+closeHeaderTopMenuBtn.addEventListener('click', () => {
+    
+    if(document.querySelector('.header-top-item.has-sub.active')){
+        document.querySelector('.header-top-item.has-sub.active').classList.remove('active')
+    }
+    
+    closeHeaderTopMenu()
+})
+
+function closeHeaderTopMenu(){
+
+    let height = headerTopSubMenu.style.height.slice(0, headerTopSubMenu.style.height.length - 2);
+    headerTopSubMenu.querySelector('.content').style.opacity = '0'
+
+    headerTopSubMenu.classList = 'header-top-sub-menu ps-5 d-block'
+
+    let time = setInterval(subtractHeigth, 1)
+
+    function subtractHeigth(){
+        height -= 10;
+        headerTopSubMenu.style.height = `${height}px`
+        
+        if(height <= -850){
+            clearInterval(time)
+            time = null
+            headerTopSubMenu.classList = 'header-top-sub-menu ps-5'
+        }
+
+    }
+}
