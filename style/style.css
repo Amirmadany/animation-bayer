@@ -591,7 +591,7 @@
 /* end footer */
 
 main{
-    margin: 4rem 0;
+    margin:  0;
 }
 
 /* start header */
@@ -698,10 +698,6 @@ main{
     display: block;
 }
 
-.header-top-sub-menu.show .content{
-}
-
-
 .header-top-sub-menu-close-btn{
     border: none;
     outline: none !important;
@@ -782,7 +778,8 @@ main{
     position: relative;
 }
 
-.header-content-inner-list-item-link:hover{
+.header-content-inner-list-item-link:hover,
+.header-content-inner-list-item.has-sub:hover .header-content-inner-list-item-link{
     color: #ff3162;
 }
 
@@ -796,6 +793,11 @@ main{
 
 .header-content-inner-list-item:last-child .header-content-inner-list-item-link::before{
     display: none;
+}
+
+.header-content-inner-list-item-link.search-btn::before{
+    display: block;
+    left: -1.6rem;
 }
 
 .header-content-inner-list-item-search{
@@ -868,5 +870,148 @@ main{
     font-size: 0.85rem;
 }
 
+.header-content-inner-list-item-menu{
+    width: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    display: none;
+    transition: all 0.5s;
+}
+.header-content-inner-list-item-menu-line{
+    width: 100%;
+    height: 0.08rem;
+    background: #0d2A40;
+    margin-top: 0.5rem;
+    transition: all 0.5s;
+}
+
+.header-content-inner-list-item-menu-line.start{
+    width: 65%;
+}
+
+.header-content-inner-list-item-menu-line.middle{
+    width: 80%;
+}
+
+.header-content-inner-list-item-menu-line.end{
+    width: 100%;
+}
+
+.header-content-inner-list-item-menu.opened{
+    transform: translateX(-0.5rem);
+}
+
+.header-content-inner-list-item-menu.opened .header-content-inner-list-item-menu-line.middle{
+    opacity: 0;
+}
+
+.header-content-inner-list-item-menu.opened .header-content-inner-list-item-menu-line.start{
+    width: 100%;
+    transform: translatex(0.82rem) rotate(45deg) translateY(0.7rem);
+}
+
+.header-content-inner-list-item-menu.opened .header-content-inner-list-item-menu-line.end{
+    width: 100%;
+    transform: translatex(1rem) rotate(-45deg) translateY(-1rem);
+}
+
+.header-content-inner-list-item.has-sub:hover .header-content-inner-list-item-sub-menu{
+    visibility: visible;
+    pointer-events: initial;
+}
+
+.header-content-inner-list-item-sub-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(-0.5rem);
+    min-height: 20rem;
+    width: 100%;
+    padding: 1.5rem 0 0 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.header-content-inner-list-item-sub-menu .content{
+    padding: 0 0 0 0;
+    background: #10384f;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.card-title-header-sub-menu{
+    font-size: 1.3rem;
+    color: #89d329;
+    font-weight: normal;
+    text-align: left;
+}
+
+.header-content-inner-list-item-sub-menu-list{
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    height: 100%;
+    min-height: 25rem;
+}
+
+.header-content-inner-list-item-sub-menu-list-item{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.788);
+}
+
+.header-content-inner-list-item-sub-menu-list-item a{
+    display: block;
+    margin-top: 0.5rem 0;
+    color: white;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.95rem;
+}
+
+.header-content-inner-list-item-sub-menu-list-item a:hover,
+.header-content-inner-list-item-sub-menu-list-item:hover > a,
+.header-content-inner-list-item-sub-menu-list-item:hover > .header-content-inner-list-item-sub-menu-list-item:hover > a{
+    color: #89d329;
+    background-color: hsla(0,0%,100%,.05);
+}
+
+.header-content-inner-list-item-sub-menu-list-item-icon{
+    font-size: 0.75rem;
+}
+
+.header-content-inner-list-item-sub-menu-list{
+    width: 33%;
+    position: relative;
+}
+
+.header-content-inner-list-item-sub-menu-list .header-content-inner-list-item-sub-menu-list {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding-left: 1rem !important;
+    background: hsla(0,0%,100%,.05);
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0s !important;
+}
+
+.header-content-inner-list-item-sub-menu-list-item:hover > .header-content-inner-list-item-sub-menu-list {
+    visibility: visible;
+    pointer-events: initial;
+}
+
+.header-content-inner-list-item-sub-menu-list .header-content-inner-list-item-sub-menu-list .header-content-inner-list-item-sub-menu-list{
+    background: hsla(0,0%,100%,.075) !important;
+}
+
+.header-content-inner-list-item-sub-menu-list .header-content-inner-list-item-sub-menu-list .header-content-inner-list-item-sub-menu-list .header-content-inner-list-item-sub-menu-list{
+    background: hsla(0,0%,100%,.085) !important;
+}
+
+.header-content-inner-list-item-sub-menu .card-text{
+    font-size: 0.85rem;
+}
 
 /* end header */

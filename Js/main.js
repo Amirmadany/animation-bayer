@@ -107,3 +107,12 @@ function closeHeaderTopMenu(){
 
     }
 }
+
+// header show-menu in the responsive size
+const headerMenuBtn = document.querySelector('.header-content-inner-list-item-menu')
+
+headerMenuBtn.addEventListener('click', () => {
+    headerMenuBtn.classList.toggle('opened')
+})
+
+// 

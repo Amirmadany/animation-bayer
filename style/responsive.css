@@ -194,14 +194,32 @@
         display: none;
     }
 
-    .header-content-inner-list{
-        display: none;
+    .header-content-inner-list ul{
+        display: none !important;
     }
 
     .header-content-brand{
         width: 3.15rem;
         height: 3.15rem;
     }
+
+    .header-content-inner-list-item-link.search-btn{
+        position: absolute;
+        right: 4rem;
+        transform: translateY(-0.5rem);
+    }
+
+    .header-content-inner-list-item-link.search-btn::before{
+        display: none;
+    }
+
+    .header-content-inner-list-item-menu{
+        display: flex;
+        position: absolute;
+        right: 1rem;
+        cursor: pointer;
+    }
+
     
 }
 
