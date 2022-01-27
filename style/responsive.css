@@ -198,6 +198,10 @@
         display: none !important;
     }
 
+    .header-content-inner-list-item-link::before{
+        display: none;
+    }
+
     .header-content-brand{
         width: 3.15rem;
         height: 3.15rem;
@@ -220,7 +224,76 @@
         cursor: pointer;
     }
 
+    .header-content.be-fixed-top .header-content-inner-title{
+        margin-top: 0rem;
+    }
+
+    .header-content.be-fixed-top{
+        padding: 0.4rem 1rem;
+    }    
+
+    .header-menu-fixed{
+        top: 6rem;
+        left: 0;
+        width: 100%;
+        min-height: 80%;
+        background: #624963;
+        overflow-y: auto !important;
+    }
     
+    .header-menu-fixed-top{
+        padding: 3rem 0;
+        clip-path:polygon(48% 2%, 80% 0, 100% 0, 100% 70%, 100% 94%, 35% 98%, 0 99%, 0 79%, 0% 35%, 0 8%);
+        background: #10384f;
+    }
+
+    .header-menu-fixed-top li .header-content-inner-list-item-link{
+        display: block;
+        width: 100%;
+        color: white !important;
+        padding: 1rem 1rem;
+        border-bottom: 1px solid white;
+    }
+
+    .header-menu-fixed-top li .header-content-inner-list-item-link.active{
+        color: #00bcff !important;
+    }
+
+    .header-top-item{
+        width: 100%;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .header-top-item-link{
+        width: 100%;
+        color: white !important;
+        padding: 1rem 1rem !important;
+        border-bottom: 1px solid white !important;
+        font-size: 1rem !important;
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+
+    .header-top-item .header-top-item-link{
+        padding-bottom: 1rem !important;
+    }
+
+    .header-top-item-icon{
+        font-size: 0.9rem;
+        transform: rotate(-90deg);
+    }
+
+    .header-top-item:last-child{
+        display: block !important;
+        padding-right: 2rem !important;
+    }
+
 }
 
 @media (max-width: 50rem){

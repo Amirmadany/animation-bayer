@@ -14,6 +14,17 @@ searchBtn.addEventListener('click', (event) => {
 
     searchBox.classList.toggle('show')
 
+    if(searchBox.classList.contains('show') && window.innerWidth <= 991){
+        if(document.querySelector('.header-menu-fixed')){
+            document.querySelector('.header-menu-fixed').remove()
+        
+            document.querySelector('main').innerHTML = main
+            document.querySelector('footer').innerHTML = footer
+            
+            headerMenuBtn.classList.remove('opened')
+        }
+    }
+
 })
 
 // header-top-items
@@ -110,9 +121,87 @@ function closeHeaderTopMenu(){
 
 // header show-menu in the responsive size
 const headerMenuBtn = document.querySelector('.header-content-inner-list-item-menu')
+const main = document.querySelector('main').innerHTML
+const footer = document.querySelector('footer').innerHTML
 
 headerMenuBtn.addEventListener('click', () => {
     headerMenuBtn.classList.toggle('opened')
+
+    const header = document.querySelector('.header')
+    
+    document.querySelector('main').innerHTML = ''
+    document.querySelector('footer').innerHTML = ''
+
+    if(headerMenuBtn.classList.contains('opened')){ 
+        const div = document.createElement('div')
+        div.classList = 'header-menu-fixed'
+        div.innerHTML = `
+            <div class="header-menu-fixed-top">
+                    
+                <ul class="d-flex flex-column list-unstyled p-0">
+                    
+                    <li class="header-content-inner-list-item has-sub">
+
+                        <a href="" class="header-content-inner-list-item-link">
+                            Home
+                        </a>
+                    
+                    </li>
+
+                    ${document.querySelector('.header-content-inner-list ul').innerHTML}
+                
+                </ul>
+
+            </div>       
+        
+        <div class="header-menu-fixed-bottom">
+
+            <ul class="header-top-items d-flex flex-column">
+                ${document.querySelector('.header-top-items').innerHTML}
+            </ul>
+
+        </div>
+        `
+        header.appendChild(div)
+    }
+
+    else {
+        document.querySelector('.header-menu-fixed').remove()
+        
+        document.querySelector('main').innerHTML = main
+        document.querySelector('footer').innerHTML = footer
+    }
+
+    if(searchBox.classList.contains('show')){
+        searchBox.classList.toggle('show')
+
+        searchBtn.innerHTML = '<i class="fas fa-search"></i>'
+    }
+
 })
 
-// 
+window.addEventListener('resize', () => {
+    
+    if(window.innerWidth >= 991){
+        if(document.querySelector('.header-menu-fixed')){
+            document.querySelector('.header-menu-fixed').remove()
+        
+            document.querySelector('main').innerHTML = main
+            document.querySelector('footer').innerHTML = footer
+            
+            headerMenuBtn.classList.remove('opened')
+        }
+    }
+
+})
+
+// if a bit scrolled to bottom come fixed header in the top
+const header = document.querySelector('.header-content')
+
+window.addEventListener('scroll', () => {
+    if(window.pageYOffset >= 100){
+        header.classList.add('be-fixed-top')
+    }   
+    else
+        header.classList.remove('be-fixed-top')
+})

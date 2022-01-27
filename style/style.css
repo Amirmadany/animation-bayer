@@ -806,7 +806,7 @@ main{
     left: 0;
     background: white;
     width: 100%;
-    z-index: 15;
+    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1012,6 +1012,35 @@ main{
 
 .header-content-inner-list-item-sub-menu .card-text{
     font-size: 0.85rem;
+}
+
+.header-content.be-fixed-top{
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.4rem 2rem;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.08);
+}
+
+.header-content.be-fixed-top .header-content-brand{
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+.header-content.be-fixed-top .header-content-inner{
+    flex-direction: row !important;
+    align-items: center !important;
+}
+
+.header-content.be-fixed-top .header-content-inner-title{
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.header-content.be-fixed-top .header-content-inner-list{
+    margin-left: 2rem;
 }
 
 /* end header */
