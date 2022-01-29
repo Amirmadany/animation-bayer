@@ -391,7 +391,7 @@
     .header-content-inner-list-item-sub-menu-list-item:hover > .header-content-inner-list-item-sub-menu-list-item:hover > a{
         background-color: none;
     }
-
+ 
 }
 
 @media (max-width: 50rem){

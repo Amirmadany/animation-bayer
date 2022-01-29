@@ -305,6 +305,14 @@ headerMenuBtn.addEventListener('click', () => {
                             li.querySelectorAll('.header-content-inner-list-item-sub-menu-list-item').forEach(item => {
                                 item.classList.remove('d-none')
                             })
+
+                            if(li.querySelector('li.has-sub.active')){
+                               const main = li.querySelectorAll('li.has-sub.active')
+
+                                main.forEach(item => {
+                                   item.classList.remove('active')
+                                })
+                            }
                         }
                         else {
                             event.target.parentElement.classList.remove('active')
@@ -316,7 +324,8 @@ headerMenuBtn.addEventListener('click', () => {
 
                             li.querySelectorAll('.header-content-inner-list-item-sub-menu-list-item').forEach(item => {
                                 item.classList.add('d-none')
-                            })     
+                            })
+                            
                         }
                     }
 
