@@ -588,6 +588,32 @@
     display: none;
 }
 
+.scrollTopBtn{
+    background: #ff3162;
+    width: 4rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: none !important;
+    outline: none !important;
+    color: white;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    clip-path: polygon(20% 0, 100% 0%, 100% 100%, 0% 100%);
+    padding-left: 0.9rem;
+}
+
+.scrollTopBtn-icon{
+    font-size: 1.1rem;
+}
+
+.scrollTopBtn span{
+    font-size: 0.7rem;
+}
+
 /* end footer */
 
 main{

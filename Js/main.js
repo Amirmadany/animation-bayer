@@ -163,6 +163,183 @@ headerMenuBtn.addEventListener('click', () => {
         </div>
         `
         header.appendChild(div)
+
+        // start bottom header
+        const headerTopItem = document.querySelectorAll('.header-menu-fixed-bottom .header-top-item.has-sub') 
+        
+        headerTopItem.forEach(item => {
+            item.addEventListener('click', (event) => {
+                event.preventDefault()
+        
+                header.classList.add('d-none')
+
+                const div = document.createElement('div')
+                div.classList = 'header-bottom-content-inner'
+                div.innerHTML = `
+                    <div class="content">
+
+                        <button class="header-top-sub-menu-close-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+
+                        <div class="container pt-3">
+                            
+                            <!-- dynamic data -->
+                            ${item.querySelector('.header-top-item-sub').innerHTML}
+                            <!-- dynamic data -->
+
+                        </div>
+
+                    </div>
+                `
+
+                document.body.appendChild(div)
+                document.body.style.background = '#624963'
+                
+                window.scrollTo({
+                    top: 0
+                })
+
+                document.querySelector('.header-bottom-content-inner .header-top-sub-menu-close-btn').addEventListener('click', () => {
+                    closeTheResponsiveSubMenuBottom()
+                })
+
+            })
+        })
+
+        const headerMainItems = document.querySelectorAll('.header-menu-fixed .header-content-inner-list-item.has-sub')
+
+        headerMainItems.forEach(item => {
+            item.addEventListener('click', (event) => {
+                if(event.target.parentElement == item || event.target.parentElement.parentElement == item || event.target.parentElement.classList.contains('has-sub') || event.target.parentElement.parentElement.classList.contains('has-sub'))
+                    event.preventDefault()
+
+                if(item.classList.contains('active') && (event.target.parentElement == item || event.target.parentElement.parentElement == item)){
+                    item.querySelector('.header-content-inner-list-item-sub-menu').classList.add('d-none')
+                    item.querySelectorAll('.header-content-inner-list-item-sub-menu-list-item').forEach(item => {
+                        item.classList.add('d-none')
+                    })
+
+                    document.querySelectorAll('.header-menu-fixed .header-content-inner-list-item').forEach(item => {
+                        item.classList.remove('d-none')
+                    })
+                    
+                    item.querySelector('a').classList.add('justify-content-between')
+                    
+                    item.classList.remove('active')
+
+                    if(item.querySelector('li.active')){
+
+                        item.querySelectorAll('li.active .header-content-inner-list-item-sub-menu-list-item').forEach(item => {
+                            item.classList.remove('d-none')
+                        })
+
+                        item.querySelectorAll('li.active .header-content-inner-list-item-sub-menu-list-item').forEach(item => {
+                            item.classList.add('d-none')
+                        })
+
+                        item.querySelector('li.active').classList.remove('active')
+                    }
+
+                    if(item.querySelector('li.active')){
+
+                        item.querySelectorAll('li.active .header-content-inner-list-item-sub-menu-list-item').forEach(item => {
+                            item.classList.remove('d-none')
+                        })
+
+                        item.querySelectorAll('li.active .header-content-inner-list-item-sub-menu-list-item').forEach(item => {
+                            item.classList.add('d-none')
+                        })
+
+                        item.querySelector('li.active').classList.remove('active')
+                    }
+
+                    if(item.querySelector('li.active')){
+
+                        item.querySelectorAll('li.active .header-content-inner-list-item-sub-menu-list-item').forEach(item => {
+                            item.classList.remove('d-none')
+                        })
+
+                        item.querySelectorAll('li.active .header-content-inner-list-item-sub-menu-list-item').forEach(item => {
+                            item.classList.add('d-none')
+                        })
+
+                        item.querySelector('li.active').classList.remove('active')
+                    }
+
+                    if(item.querySelector('li.active')){
+
+                        item.querySelectorAll('li.active .header-content-inner-list-item-sub-menu-list-item').forEach(item => {
+                            item.classList.remove('d-none')
+                        })
+
+                        item.querySelectorAll('li.active .header-content-inner-list-item-sub-menu-list-item').forEach(item => {
+                            item.classList.add('d-none')
+                        })
+
+                        item.querySelector('li.active').classList.remove('active')
+                    }
+                    
+                }
+
+                else {
+                     
+                    if((event.target.parentElement.classList.contains('has-sub') || event.target.parentElement.parentElement.classList.contains('has-sub')) && (event.target.parentElement != item && event.target.parentElement.parentElement != item)){
+                        let ul = event.target.parentElement.parentElement
+                        let li = event.target.parentElement;
+                        
+                        if(ul.tagName != 'UL')
+                            ul = event.target.parentElement.parentElement.parentElement
+                        if(li.tagName != 'LI')
+                            li = event.target.parentElement.parentElement
+                        
+                        if(!li.classList.contains('active')){
+                            ul.querySelectorAll('.header-content-inner-list-item-sub-menu-list-item').forEach(item => {
+                                item.classList.add('d-none')
+                            })
+    
+                            li.classList.remove('d-none')
+    
+                            li.classList.add('active')
+                            
+                            li.querySelectorAll('.header-content-inner-list-item-sub-menu-list-item').forEach(item => {
+                                item.classList.remove('d-none')
+                            })
+                        }
+                        else {
+                            event.target.parentElement.classList.remove('active')
+                            event.target.parentElement.parentElement.classList.remove('active')
+
+                            ul.querySelectorAll('.header-content-inner-list-item-sub-menu-list-item').forEach(item => {
+                                item.classList.remove('d-none')
+                            })
+
+                            li.querySelectorAll('.header-content-inner-list-item-sub-menu-list-item').forEach(item => {
+                                item.classList.add('d-none')
+                            })     
+                        }
+                    }
+
+                    else {
+                        document.querySelectorAll('.header-menu-fixed .header-content-inner-list-item').forEach(item => {
+                            item.classList.add('d-none')
+                        })
+        
+                        item.classList.remove('d-none')
+                        item.classList.add('active')
+        
+                        item.querySelector('a').classList.remove('justify-content-between')
+        
+                        item.querySelector('.header-content-inner-list-item-sub-menu').classList.remove('d-none')
+                        item.querySelectorAll('.header-content-inner-list-item-sub-menu-list-item').forEach(item => {
+                            item.classList.remove('d-none')
+                        })  
+                    }
+                }
+
+            })
+        })
+
     }
 
     else {
@@ -170,6 +347,15 @@ headerMenuBtn.addEventListener('click', () => {
         
         document.querySelector('main').innerHTML = main
         document.querySelector('footer').innerHTML = footer
+        
+        // work scroll to top
+        const scrollTopBtn = document.querySelector('.scrollTopBtn')
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0
+            })  
+        })
+
     }
 
     if(searchBox.classList.contains('show')){
@@ -179,6 +365,14 @@ headerMenuBtn.addEventListener('click', () => {
     }
 
 })
+
+function closeTheResponsiveSubMenuBottom(){
+    document.body.querySelector('.header-bottom-content-inner').remove()
+
+    document.querySelector('.header').classList.remove('d-none')
+
+    document.body.style.background = 'none'
+}
 
 window.addEventListener('resize', () => {
     
@@ -190,6 +384,18 @@ window.addEventListener('resize', () => {
             document.querySelector('footer').innerHTML = footer
             
             headerMenuBtn.classList.remove('opened')
+
+            if(document.body.querySelector('.header-bottom-content-inner')){
+                closeTheResponsiveSubMenuBottom()
+            }
+
+            const scrollTopBtn = document.querySelector('.scrollTopBtn')
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0
+                })  
+            })
+
         }
     }
 
@@ -204,4 +410,23 @@ window.addEventListener('scroll', () => {
     }   
     else
         header.classList.remove('be-fixed-top')
+
+    if(document.querySelector('.footer')){
+        if(window.pageYOffset >= 250){
+            if(document.querySelector('.scrollTopBtn'))
+                document.querySelector('.scrollTopBtn').classList.remove('d-none')
+        }
+        else {
+            if(document.querySelector('.scrollTopBtn'))
+              document.querySelector('.scrollTopBtn').classList.add('d-none')
+        }
+    }
+})
+
+// scrollTop btn
+const scrollTopBtn = document.querySelector('.scrollTopBtn')
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0
+    })  
 })
