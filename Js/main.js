@@ -414,7 +414,7 @@ window.addEventListener('resize', () => {
 const header = document.querySelector('.header-content')
 
 window.addEventListener('scroll', () => {
-    if(window.pageYOffset >= 100){
+    if(window.pageYOffset >= 150){
         header.classList.add('be-fixed-top')
     }   
     else
